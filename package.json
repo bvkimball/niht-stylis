@@ -1,0 +1,46 @@
+{
+  "name": "@niht/stylis",
+  "version": "0.0.1",
+  "description": "A template literal for stylis preprocessor",
+  "source": "src/niht-stylis.js",
+  "main": "lib/niht-stylis.js",
+  "module": "lib/niht-stylis.mjs",
+  "unpkg": "lib/niht-stylis.umd.js",
+  "author": "Brian Kimball",
+  "repository": "bvkimball/niht-stylis",
+  "license": "MIT",
+  "dependencies": {
+    "stylis": "^3.5.4"
+  },
+  "devDependencies": {
+    "@niht/chef": "0.0.1",
+    "ava": "*",
+    "browser-env": "^3.2.6",
+    "xo": "*"
+  },
+  "scripts": {
+    "build": "bake",
+    "test": "xo --fix && ava --verbose"
+  },
+  "files": [
+    "lib/**/*.*"
+  ],
+  "xo": {
+    "ignores": [
+      "examples",
+      "test"
+    ],
+    "prettier": true,
+    "envs": [
+      "browser"
+    ]
+  },
+  "ava": {
+    "require": [
+      "./test/_setup-browser-env.js"
+    ],
+    "files": [
+      "test/**/*.test.js"
+    ]
+  }
+}
